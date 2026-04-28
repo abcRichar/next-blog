@@ -1,4 +1,4 @@
-﻿import { posts, techStack, profile } from "@/data/site";
+﻿import { techStack, profile } from "@/data/site";
 import { getAllPosts, getAllTags } from "@/lib/content";
 
 export async function GET() {
@@ -6,6 +6,6 @@ export async function GET() {
     profile,
     techStack,
     posts: getAllPosts().map(({ content, headings, ...meta }) => meta),
-    tags: getAllTags()
+    tags: getAllTags(),
   });
 }
