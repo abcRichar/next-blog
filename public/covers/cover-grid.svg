@@ -1,0 +1,19 @@
+﻿<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#070910"/>
+  <path d="M0 128H1600" stroke="#00FFFF" stroke-opacity="0.18"/>
+  <path d="M0 256H1600" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M0 384H1600" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M0 512H1600" stroke="#FF00FF" stroke-opacity="0.12"/>
+  <path d="M0 640H1600" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M0 768H1600" stroke="#00FFFF" stroke-opacity="0.18"/>
+  <path d="M150 100V800" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M420 100V800" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M800 100V800" stroke="#FF00FF" stroke-opacity="0.16"/>
+  <path d="M1180 100V800" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <path d="M1450 100V800" stroke="#00FFFF" stroke-opacity="0.12"/>
+  <rect x="520" y="240" width="560" height="360" rx="16" fill="#0A1020" stroke="#00FFFF" stroke-opacity="0.45"/>
+  <rect x="590" y="310" width="180" height="18" rx="9" fill="#00FFFF" fill-opacity="0.6"/>
+  <rect x="590" y="356" width="360" height="14" rx="7" fill="#7DD3FC" fill-opacity="0.35"/>
+  <rect x="590" y="398" width="290" height="14" rx="7" fill="#FF00FF" fill-opacity="0.35"/>
+  <rect x="590" y="440" width="330" height="14" rx="7" fill="#7DD3FC" fill-opacity="0.35"/>
+</svg>

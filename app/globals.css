@@ -1,0 +1,346 @@
+﻿@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #050505;
+  --foreground: #e6e6eb;
+  --muted-foreground: #a9acb8;
+  --panel: rgba(10, 10, 12, 0.82);
+  --panel-strong: rgba(16, 16, 20, 0.92);
+  --panel-border: rgba(255, 42, 109, 0.18);
+  --panel-border-strong: rgba(5, 217, 232, 0.26);
+  --scanline: rgba(255, 255, 255, 0.03);
+  --accent-primary: #ff2a6d;
+  --accent-primary-soft: rgba(255, 42, 109, 0.16);
+  --accent-secondary: #05d9e8;
+  --accent-secondary-soft: rgba(5, 217, 232, 0.16);
+  --accent-tertiary: #f706cf;
+  --accent-tertiary-soft: rgba(247, 6, 207, 0.12);
+  --shadow-red: 0 0 24px rgba(255, 42, 109, 0.18);
+  --shadow-blue: 0 0 22px rgba(5, 217, 232, 0.16);
+}
+
+.dark {
+  --background: #050505;
+  --foreground: #ececf1;
+  --muted-foreground: #aeb1bc;
+  --panel: rgba(10, 10, 12, 0.84);
+  --panel-strong: rgba(15, 15, 18, 0.94);
+  --panel-border: rgba(255, 42, 109, 0.18);
+  --panel-border-strong: rgba(5, 217, 232, 0.28);
+  --scanline: rgba(255, 255, 255, 0.03);
+  --accent-primary: #ff2a6d;
+  --accent-primary-soft: rgba(255, 42, 109, 0.18);
+  --accent-secondary: #05d9e8;
+  --accent-secondary-soft: rgba(5, 217, 232, 0.18);
+  --accent-tertiary: #f706cf;
+  --accent-tertiary-soft: rgba(247, 6, 207, 0.12);
+  --shadow-red: 0 0 26px rgba(255, 42, 109, 0.2);
+  --shadow-blue: 0 0 24px rgba(5, 217, 232, 0.18);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  background-image:
+    radial-gradient(circle at top right, rgba(255, 42, 109, 0.08), transparent 24%),
+    radial-gradient(circle at 18% 12%, rgba(5, 217, 232, 0.06), transparent 20%);
+}
+
+.scanlines {
+  background-image: linear-gradient(to bottom, transparent 50%, var(--scanline) 50%);
+  background-size: 100% 4px;
+}
+
+.cyber-panel {
+  position: relative;
+  border: 1px solid var(--panel-border);
+  background: linear-gradient(180deg, rgb(18 18 22 / 0.92), rgb(8 8 10 / 0.88));
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.03) inset,
+    var(--shadow-red),
+    0 20px 60px rgb(0 0 0 / 0.42);
+  backdrop-filter: blur(20px);
+  clip-path: polygon(0 0, calc(100% - 26px) 0, 100% 26px, 100% 100%, 24px 100%, 0 calc(100% - 24px));
+}
+
+.cyber-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 42, 109, 0.14), transparent 18%),
+    linear-gradient(315deg, rgba(5, 217, 232, 0.08), transparent 22%);
+}
+
+.cyber-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(16, 16, 20, 0.88), rgba(8, 8, 10, 0.92));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+    0 16px 44px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(18px);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+
+.cyber-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(5, 217, 232, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    var(--shadow-blue),
+    0 18px 48px rgba(0, 0, 0, 0.34);
+}
+
+.cyber-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.625rem 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--foreground);
+  transition: all 220ms ease;
+}
+
+.cyber-pill:hover {
+  border-color: rgba(5, 217, 232, 0.42);
+  color: #f4f5f8;
+  box-shadow: var(--shadow-blue);
+}
+
+.cyber-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 42, 109, 0.45);
+  background: linear-gradient(135deg, rgba(255, 42, 109, 0.22), rgba(123, 12, 49, 0.92));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    var(--shadow-red);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: #f6f2f4;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 0 1px rgba(5, 217, 232, 0.16) inset,
+    0 0 28px rgba(255, 42, 109, 0.22),
+    0 0 14px rgba(5, 217, 232, 0.12);
+}
+
+.cyber-button:active {
+  transform: scale(0.97);
+}
+
+.cyber-icon-button {
+  display: inline-flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--foreground);
+  transition: all 180ms ease;
+}
+
+.cyber-icon-button:hover {
+  border-color: rgba(5, 217, 232, 0.45);
+  box-shadow: var(--shadow-blue);
+}
+
+.cyber-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.4rem 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  color: #c7dff6;
+}
+
+.hud-stat {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(18, 18, 20, 0.9), rgba(8, 8, 10, 0.88));
+  padding: 1.25rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+}
+
+.hud-stat span {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--accent-secondary);
+}
+
+.hud-stat strong {
+  margin-top: 0.75rem;
+  display: block;
+  font-size: 2rem;
+  color: #f4f4f7;
+}
+
+.markdown-body {
+  color: var(--foreground);
+}
+
+.markdown-body > * + * {
+  margin-top: 1.25rem;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: #f3f3f6;
+  font-weight: 600;
+}
+
+.markdown-body h1 {
+  font-size: 2rem;
+}
+
+.markdown-body h2 {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+}
+
+.markdown-body p,
+.markdown-body li {
+  line-height: 1.95;
+  color: var(--muted-foreground);
+}
+
+.markdown-body ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.markdown-body code {
+  border: 1px solid rgba(255, 42, 109, 0.15);
+  background: rgba(255, 42, 109, 0.08);
+  padding: 0.15rem 0.45rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.875rem;
+  color: #79edf5;
+}
+
+.markdown-body pre {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(8, 9, 12, 0.96);
+  padding: 1rem;
+  box-shadow:
+    inset 0 0 18px rgba(5, 217, 232, 0.04),
+    0 10px 28px rgba(0, 0, 0, 0.26);
+}
+
+.markdown-body pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+@keyframes pulse-grid {
+  0%,
+  100% { opacity: 0.18; }
+  50% { opacity: 0.32; }
+}
+
+.scanlines {
+  animation: pulse-grid 6s ease-in-out infinite;
+}
+
+
+
+.markdown-body table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 0.875rem;
+  text-align: left;
+}
+
+.markdown-body th {
+  color: #f3f3f6;
+  background: rgba(255, 42, 109, 0.08);
+}
+
+.markdown-body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.markdown-body a {
+  color: #05d9e8;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  word-break: break-word;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid rgba(255, 42, 109, 0.45);
+  padding-left: 1rem;
+  color: #c8cad4;
+}
+
+@media (max-width: 640px) {
+  .markdown-body h1 {
+    font-size: 1.75rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.25rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.1rem;
+  }
+
+  .markdown-body p,
+  .markdown-body li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .markdown-body pre {
+    padding: 0.875rem;
+  }
+}

@@ -1,0 +1,15 @@
+﻿<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#050816"/>
+  <rect x="84" y="84" width="1432" height="732" rx="18" stroke="#72F5FF" stroke-opacity="0.35"/>
+  <path d="M140 140H840L920 220V380H140V140Z" fill="#0C1730" stroke="#72F5FF" stroke-opacity="0.45"/>
+  <path d="M980 180H1440V720H980V180Z" fill="#0A1223" stroke="#FF3BB8" stroke-opacity="0.4"/>
+  <circle cx="1180" cy="340" r="110" fill="#FF3BB8" fill-opacity="0.18"/>
+  <circle cx="1180" cy="340" r="74" stroke="#FF3BB8" stroke-opacity="0.45" stroke-width="2"/>
+  <path d="M180 470H890" stroke="#72F5FF" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M180 530H760" stroke="#72F5FF" stroke-opacity="0.35" stroke-width="2"/>
+  <path d="M180 590H680" stroke="#72F5FF" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="180" y="648" width="214" height="56" fill="#72F5FF" fill-opacity="0.12" stroke="#72F5FF" stroke-opacity="0.5"/>
+  <rect x="416" y="648" width="214" height="56" fill="#FFB85C" fill-opacity="0.1" stroke="#FFB85C" stroke-opacity="0.45"/>
+  <path d="M0 96H1600" stroke="#72F5FF" stroke-opacity="0.08"/>
+  <path d="M0 804H1600" stroke="#72F5FF" stroke-opacity="0.08"/>
+</svg>
